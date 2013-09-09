@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+	<div class="row content col-lg-12">
+		{% for session in sessions %}
+			<div class="panel panel-default">
+			  	<div class="panel-heading">
+			  		{{ session['ip'] }}
+			  		<div class="pull-right text-muted">
+			  			{{ session['starttime'] }}{% if session['endtime'] is not null %}&mdash;{{ session['endtime'] }}{% endif %}
+			  		</div>
+			  	</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

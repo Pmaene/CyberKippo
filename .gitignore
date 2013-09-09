@@ -1,0 +1,9 @@
+# Silex
+/components/
+/vendor/
+
+/web/assets/css/*.css
+/web/assets/js/*.js
+
+# Sublime Text
+*.sublime*

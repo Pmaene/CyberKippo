@@ -1,0 +1,12 @@
+{
+    "require": {
+    	"doctrine/dbal": "~2.2",
+        "silex/silex": "~1.0",
+        "symfony/twig-bridge": "~2.3",
+        "twig/twig": "~1.8",
+
+        "mheap/silex-assetic": "~1.0",
+
+        "components/bootstrap": "~3.0"
+    }
+}

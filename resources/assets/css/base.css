@@ -1,0 +1,23 @@
+body {
+    padding-top: 10px;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+.header {
+    margin: 0 15px 15px 0;
+    padding-left: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.header h3 {
+    margin: 0 inherit;
+    line-height: 40px;
+    padding-bottom: 10px;
+}
+
+.content {
+    padding-left: 30px;
+}
