@@ -8,7 +8,7 @@ body {
 
 .header {
     margin: 0 15px 15px 0;
-    padding-left: 15px;
+    padding: 0 15px;
     border-bottom: 1px solid #e5e5e5;
 }
 
