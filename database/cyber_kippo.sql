@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `auth` (
   `password` varchar(100) NOT NULL,
   `timestamp` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `cif` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -33,13 +33,13 @@ CREATE TABLE IF NOT EXISTS `cif` (
   `restriction` varchar(50) DEFAULT NULL,
   `prefix` varchar(18) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2228 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `clients` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
   `version` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `downloads` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `downloads` (
   `outfile` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `session` (`session`,`timestamp`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `input` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -60,13 +60,13 @@ CREATE TABLE IF NOT EXISTS `input` (
   `input` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `session` (`session`,`timestamp`,`realm`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `sensors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `sessions` (
   `id` char(32) NOT NULL,
@@ -85,4 +85,4 @@ CREATE TABLE IF NOT EXISTS `ttylog` (
   `session` char(32) NOT NULL,
   `ttylog` mediumblob NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
