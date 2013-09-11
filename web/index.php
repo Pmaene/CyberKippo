@@ -109,7 +109,7 @@ function _getSessions($app, $nbSessions = 5, $startSessions = 0) {
                 $sessions[$i]['cif'][$j]['detecttime'] = new \DateTime($cif['detecttime']);
                 $sessions[$i]['cif'][$j]['reporttime'] = new \DateTime($cif['reporttime']);
 
-                $sessions[$i]['cif'][$j]['country'] = htmlentities($countries[$cif['cc']]);
+                $sessions[$i]['cif'][$j]['country'] = isset($countries[$cif['cc']]) ? htmlentities($countries[$cif['cc']]) : 'Unknown';
             }
         }
     }
