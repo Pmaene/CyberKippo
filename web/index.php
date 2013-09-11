@@ -105,12 +105,24 @@ function _getSessions($app, $nbSessions = 5, $startSessions = 0) {
         if (count($cif) > 0) {
             $sessions[$i]['cif'] = $cif;
 
+            $reduceDates = array();
+            $reducedCif = array();
             foreach ($sessions[$i]['cif'] as $j => $cif) {
                 $sessions[$i]['cif'][$j]['detecttime'] = new \DateTime($cif['detecttime']);
                 $sessions[$i]['cif'][$j]['reporttime'] = new \DateTime($cif['reporttime']);
 
                 $sessions[$i]['cif'][$j]['country'] = isset($countries[$cif['cc']]) ? htmlentities($countries[$cif['cc']]) : 'Unknown';
+
+                if (!isset($reduceDates[md5($cif['alternativeid'])]))
+                    $reduceDates[md5($cif['alternativeid'])] = $sessions[$i]['cif'][$j]['detecttime'];
+
+                if ($reduceDates[md5($cif['alternativeid'])] <= $sessions[$i]['cif'][$j]['detecttime']) {
+                    $reduceDates[md5($cif['alternativeid'])] = $sessions[$i]['cif'][$j]['detecttime'];
+                    $reducedCif[md5($cif['alternativeid'])] = $sessions[$i]['cif'][$j];
+                }
             }
+
+            $sessions[$i]['cif'] = $reducedCif;
         }
     }
 
