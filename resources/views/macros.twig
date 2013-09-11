@@ -1,0 +1,74 @@
+{% macro displaySession(session) %}
+	<div class="panel {% if session['auth'] is defined %}panel-danger{% elseif session['cif'] is defined and session['cif']|length > 5 %}panel-warning{% elseif session['cif'] is defined %}panel-info{% else %}panel-default{% endif %}">
+	  	<div class="panel-heading">
+	  		<a data-toggle="collapse" href="#collapse-{{ session['id'] }}"><b>{{ session['ip'] }}</b></a>
+	  		<div class="pull-right">
+	  			<i>{{ session['starttime'].format('d/m/Y H:i:s') }}{% if session['endtime'] is not null %}&mdash;{{ session['endtime'].format('H:i:s') }}{% endif %}</i>
+	  		</div>
+	  	</div>
+
+	  	{% if session['auth'] is defined or session['cif'] is defined %}
+	  		<div class="panel-collapse collapse" id="collapse-{{ session['id'] }}">
+			  	<div class="panel-body">
+			  		{% if session['auth'] is defined %}
+				  		<div class="col-lg-8">
+					  		<h3>Authentication</h3>
+					  		<table class="table table-striped">
+		        				<thead>
+		          					<tr>
+		          						<th>Time</th>
+		            					<th>Username</th>
+		            					<th>Password</th>
+		            					<th>Success</th>
+		          					</tr>
+		        				</thead>
+
+		        				<tbody>
+		        					{% for row in session['auth'] %}
+						        		<tr>
+						        			<td>{{ row['timestamp'].format('H:i:s') }}</td>
+						            		<td>{{ row['username'] }}</td>
+						            		<td>{{ row['password'] }}</td>
+						            		<td>{% if row['username'] == 1 %}Yes{% else %}No{% endif %}</td>
+						          		</tr>
+						          	{% endfor %}
+					        	</tbody>
+					      	</table>
+					    </div>
+				    {% endif %}
+
+				    {% if session['cif'] is defined %}
+				  		<div class="col-lg-12">
+					  		<h3>Collective Intelligence Framework</h3>
+					  		<table class="table table-striped">
+		        				<thead>
+		          					<tr>
+		          						<th>Detect Time</th>
+		          						<th>Assessment</th>
+		            					<th>Prefix</th>
+		            					<th>ASN</th>
+		            					<th>Country</th>
+		            					<th>Source</th>
+		          					</tr>
+		        				</thead>
+
+		        				<tbody>
+		        					{% for row in session['cif'] %}
+						        		<tr>
+						        			<td>{{ row['detecttime'].format('d/m/Y H:i:s') }}</td>
+						        			<td>{{ row['assessment'] }}</td>
+						        			<td>{{ row['prefix'] }}</td>
+						        			<td>{{ row['asn_desc'] }}</td>
+						        			<td>{{ row['country'] }}</td>
+						            		<td>{{ row['alternativeid'] }}</td>
+						          		</tr>
+						          	{% endfor %}
+					        	</tbody>
+					      	</table>
+					    </div>
+				    {% endif %}
+			  	</div>
+			</div>
+		{% endif %}
+	</div>
+{% endmacro %}

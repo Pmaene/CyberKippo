@@ -1,16 +1,17 @@
+{% import 'macros.twig' as macros %}
 {% extends 'base.twig' %}
 
 {% block content %}
 	<div class="row content col-lg-12">
+		<div class="alert alert-dismissable">
+		  	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		  	<strong>Info!</strong> Click on an IP address for more information on the session.
+		</div>
+	</div>
+
+	<div class="row content col-lg-12">
 		{% for session in sessions %}
-			<div class="panel panel-default">
-			  	<div class="panel-heading">
-			  		{{ session['ip'] }}
-			  		<div class="pull-right text-muted">
-			  			{{ session['starttime'] }}{% if session['endtime'] is not null %}&mdash;{{ session['endtime'] }}{% endif %}
-			  		</div>
-			  	</div>
-			</div>
+			{{ macros.displaySession(session) }}
 		{% endfor %}
 	</div>
 {% endblock %}

@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "795621ea557aa64c7ea0eec3f03bb149",
+    "hash": "0849e6f5e19c6ed6734e3dd5cb279e4c",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -567,6 +567,63 @@
             "time": "2013-01-12 18:59:04"
         },
         {
+            "name": "igorw/config-service-provider",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igorw/ConfigServiceProvider.git",
+                "reference": "8e8f60b3ec86d63733db3bd6371117a758027ec6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorw/ConfigServiceProvider/zipball/8e8f60b3ec86d63733db3bd6371117a758027ec6",
+                "reference": "8e8f60b3ec86d63733db3bd6371117a758027ec6",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": "~1.0"
+            },
+            "require-dev": {
+                "jamesmoss/toml": "~0.1",
+                "symfony/yaml": "~2.1"
+            },
+            "suggest": {
+                "jamesmoss/toml": "~0.1",
+                "symfony/yaml": "~2.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Igorw\\Silex": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch",
+                    "homepage": "http://wiedler.ch/igor/"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/igorw/ConfigServiceProvider/contributors"
+                }
+            ],
+            "description": "A config ServiceProvider for Silex with support for php, json and yaml.",
+            "keywords": [
+                "silex"
+            ],
+            "time": "2013-05-31 14:23:34"
+        },
+        {
             "name": "kriswallsmith/assetic",
             "version": "v1.1.2",
             "source": {
@@ -636,6 +693,98 @@
                 "minification"
             ],
             "time": "2013-07-19 00:03:27"
+        },
+        {
+            "name": "kriswallsmith/buzz",
+            "version": "v0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kriswallsmith/Buzz.git",
+                "reference": "759432d66387e3433d3b06cb6f773b97225b9b17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kriswallsmith/Buzz/zipball/759432d66387e3433d3b06cb6f773b97225b9b17",
+                "reference": "759432d66387e3433d3b06cb6f773b97225b9b17",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "ext-curl": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Buzz": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Lightweight HTTP client",
+            "homepage": "https://github.com/kriswallsmith/Buzz",
+            "keywords": [
+                "curl",
+                "http client"
+            ],
+            "time": "2013-05-19 03:41:15"
+        },
+        {
+            "name": "marcw/buzz-service-provider",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marcw/silex-buzz-extension.git",
+                "reference": "df05d3d9efcd4638971753683908f3d840558f17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marcw/silex-buzz-extension/zipball/df05d3d9efcd4638971753683908f3d840558f17",
+                "reference": "df05d3d9efcd4638971753683908f3d840558f17",
+                "shasum": ""
+            },
+            "require": {
+                "kriswallsmith/buzz": ">=0.6",
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MarcW\\Silex\\Provider": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Weistroff",
+                    "email": "marc@weistroff.net",
+                    "homepage": "http://marc.weistroff.net"
+                }
+            ],
+            "description": "Silex ServiceProvider for Buzz Http Library",
+            "homepage": "https://github.com/marcw/silex-buzz-extension",
+            "keywords": [
+                "buzz",
+                "service provider",
+                "silex"
+            ],
+            "time": "2012-11-08 18:55:41"
         },
         {
             "name": "mheap/silex-assetic",
@@ -1411,9 +1560,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "marcw/buzz-service-provider": 20
+    },
     "platform": [
 
     ],

@@ -5,5 +5,7 @@
 /web/assets/css/*.css
 /web/assets/js/*.js
 
+/config/parameters.json
+
 # Sublime Text
 *.sublime*

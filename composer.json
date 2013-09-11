@@ -5,6 +5,8 @@
         "symfony/twig-bridge": "~2.3",
         "twig/twig": "~1.8",
 
+        "igorw/config-service-provider": "~1.2",
+        "marcw/buzz-service-provider": "dev-master",
         "mheap/silex-assetic": "~1.0",
 
         "components/bootstrap": "~3.0"
