@@ -130,7 +130,7 @@ function _getSessions($app, $nbSessions = 5, $startSessions = 0) {
 }
 
 function _queryCif($query) {
-    $client = new Buzz\Client\FileGetcontents();
+    $client = new Buzz\Client\FileGetContents();
     $client->setTimeout(60);
 
     $browser = new Buzz\Browser($client);
