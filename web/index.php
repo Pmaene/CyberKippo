@@ -72,7 +72,7 @@ function _getSessions($app, $nbSessions = 5, $startSessions = 0) {
 
         $nbCif = $app['db']->fetchAssoc('SELECT COUNT(id) as nbCif FROM cif WHERE session = ? AND reporttime > DATE_SUB(NOW(), INTERVAL ? DAY)', array($session['id'], 5))['nbCif'];
         if ($nbCif == 0) {
-            foreach (_queryCif($session['ip']) as $cif) {
+            foreach (_queryCif($app, $session['ip']) as $cif) {
                 $cif['detecttime'] = new \DateTime($cif['detecttime']);
                 $cif['reporttime'] = new \DateTime($cif['reporttime']);
 
@@ -129,7 +129,7 @@ function _getSessions($app, $nbSessions = 5, $startSessions = 0) {
     return $sessions;
 }
 
-function _queryCif($query) {
+function _queryCif($app, $query) {
     $client = new Buzz\Client\FileGetContents();
     $client->setTimeout(60);
 
