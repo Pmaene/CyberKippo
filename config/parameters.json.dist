@@ -1,15 +1,15 @@
 {
-	"parameters": {
-		"database": {
-			"driver"  : "pdo_mysql",
-			"host"    : "localhost",
-			"dbname"  : "cyber_kippo",
-			"user"    : "cyber_kippo",
-			"password": "9hFDxWHSEWfmyLyK"
-		},
-		"cif" : {
-			"host"    : "127.0.0.1",
-			"api_key" : ""
-		}
-	}
+    "parameters": {
+        "database": {
+            "driver"  : "pdo_mysql",
+            "host"    : "localhost",
+            "dbname"  : "cyber_kippo",
+            "user"    : "cyber_kippo",
+            "password": "9hFDxWHSEWfmyLyK"
+        },
+        "cif" : {
+            "host"    : "127.0.0.1",
+            "api_key" : ""
+        }
+    }
 }

@@ -2,16 +2,16 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-	<div class="row content col-lg-12">
-		<div class="alert alert-dismissable">
-		  	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		  	<strong>Info!</strong> Click on an IP address for more information on the session.
-		</div>
-	</div>
+    <div class="row content col-lg-12">
+        <div class="alert alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Info!</strong> Click on an IP address for more information on the session.
+        </div>
+    </div>
 
-	<div class="row content col-lg-12">
-		{% for session in sessions %}
-			{{ macros.displaySession(session) }}
-		{% endfor %}
-	</div>
+    <div class="row content col-lg-12">
+        {% for session in sessions %}
+            {{ macros.displaySession(session) }}
+        {% endfor %}
+    </div>
 {% endblock %}

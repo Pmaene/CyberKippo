@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  	<head>
-    	<meta charset="utf-8">
-	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    	<meta name="description" content="">
-    	<meta name="author" content="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
 
-    	<title>CyberKippo</title>
+		<title>CyberKippo</title>
 
-	    {% stylesheets
-	    	'../components/bootstrap/css/bootstrap.min.css'
-	    	'../resources/assets/css/*.css'
-	    	output='assets/css/base.css'
+		{% stylesheets
+			'../components/bootstrap/css/bootstrap.min.css'
+			'../resources/assets/css/*.css'
+			output='assets/css/base.css'
 		%}
-	    	<link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}/{{ asset_url }}" />
+			<link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}/{{ asset_url }}" />
 		{% endstylesheets %}
 
 		{% javascripts
-            '../components/jquery/jquery.min.js'
-            output='assets/js/jquery.js'
-        %}
-            <script type="text/javascript" src="{{ app.request.basepath }}/{{ asset_url }}"></script>
-        {% endjavascripts %}
-  	</head>
+			'../components/jquery/jquery.min.js'
+			output='assets/js/jquery.js'
+		%}
+			<script type="text/javascript" src="{{ app.request.basepath }}/{{ asset_url }}"></script>
+		{% endjavascripts %}
+	</head>
 
-  	<body>
-    	<div class="container">
-      		<div class="header">
-       	 		<ul class="nav nav-pills pull-right">
-          			<li {% if _route == 'index' %}class="active"{% endif %}><a href="{{ app.url_generator.generate('index') }}">Recent Activity</a></li>
-          			<li {% if _route == 'history' %}class="active"{% endif %}><a href="{{ app.url_generator.generate('history', {page: '1'}) }}">History</a></li>
-        		</ul>
-        		<h3 class="text-muted">CyberKippo</h3>
-      		</div>
+	<body>
+		<div class="container">
+			<div class="header">
+				<ul class="nav nav-pills pull-right">
+					<li {% if _route == 'index' %}class="active"{% endif %}><a href="{{ app.url_generator.generate('index') }}">Recent Activity</a></li>
+					<li {% if _route == 'history' %}class="active"{% endif %}><a href="{{ app.url_generator.generate('history', {page: '1'}) }}">History</a></li>
+				</ul>
+				<h3 class="text-muted">CyberKippo</h3>
+			</div>
 
-		    {% block content %}{% endblock %}
-    	</div>
+			{% block content %}{% endblock %}
+		</div>
 
-	   	{% javascripts
-            '../components/bootstrap/js/bootstrap.min.js'
-            output='assets/js/bootstrap.js'
-        %}
-            <script type="text/javascript" src="{{ app.request.basepath }}/{{ asset_url }}"></script>
-        {% endjavascripts %}
+		{% javascripts
+			'../components/bootstrap/js/bootstrap.min.js'
+			output='assets/js/bootstrap.js'
+		%}
+			<script type="text/javascript" src="{{ app.request.basepath }}/{{ asset_url }}"></script>
+		{% endjavascripts %}
   </body>
 </html>
