@@ -11,13 +11,21 @@
     <div class="row content col-lg-12 text-center">
         <ul class="pagination">
             <li {% if currentPage == 1 %}class="disabled"{% endif %}>
-                <a href="{{ app.url_generator.generate('history', {page: currentPage-1}) }}">&laquo;</a>
+                <a href="{{ app.url_generator.generate('history', {page: 1}) }}">&laquo;</a>
             </li>
-            {% for i in 1..nbPages %}
-                <li {% if i == currentPage %}class="active"{% endif %}><a href="{{ app.url_generator.generate('history', {page: i}) }}">{{ i }}</a></li>
-            {% endfor %}
+            <li {% if currentPage == 1 %}class="disabled"{% endif %}>
+                <a href="{{ app.url_generator.generate('history', {page: currentPage-1}) }}">&lt;</a>
+            </li>
+
+            <li class="active">
+                <a href="{{ app.url_generator.generate('history', {page: currentPage}) }}">{{ currentPage }}/{{ nbPages }}</a>
+            </li>
+
             <li {% if currentPage == nbPages %}class="disabled"{% endif %}>
-                <a href="{{ app.url_generator.generate('history', {page: currentPage+1}) }}">&raquo;</a>
+                <a href="{{ app.url_generator.generate('history', {page: currentPage+1}) }}">&gt;</a>
+            </li>
+            <li {% if currentPage == nbPages %}class="disabled"{% endif %}>
+                <a href="{{ app.url_generator.generate('history', {page: nbPages}) }}">&raquo;</a>
             </li>
         </ul>
     </div>
